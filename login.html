@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>LaZ Clothing Store - Official Website</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/navbar-images.css">
+      <link rel="stylesheet" type="text/css" href="css/product.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style type="text/css">
+         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+         .form-name, .form-input {
+            display:block;
+         }
+         .form-name{
+            margin-top: 30px;
+            font-weight: 700;
+         }
+         .form-input{
+            height: 45px;
+            width: 400px;
+            padding: 9px;
+            border: 0.1px solid #6d6e6e;
+         }
+         .form-input:focus{
+            outline: none !important;
+            border:1px solid #297E84;
+            box-shadow: 0 0 0.8px #719ECE;
+         }
+         .form-input[type="text"]{
+            font-size: 24px;
+         }
+         .login{
+            color: #6d6e6e;
+            font-family: 'Montserrat', sans-serif;
+         }
+         .login-head{
+            color: #141414;
+            text-align: center;
+            font-weight: 300;
+         }
+         .fb-login-btn{
+            background-color: #3a5795;
+            padding: 15px;
+            font-size: 25px;
+            margin: 15px auto 0;
+            width: 100%;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 3px;
+            border:none;
+         }
+         .fb-login-btn:hover{
+            background-color: #2e4575;
+         }
+         .login-notes{
+            padding-top: 30px;
+            text-align: center;
+         }
+         
+         .forgot-pwd-btn{
+            font-weight: 500;
+            color: #141414;
+            font-size: 12px;
+         }
+
+         /* The container */
+         .checkbox-container {
+           display: block;
+           position: relative;
+           padding-left: 35px;
+           margin-bottom: 2px;
+           cursor: pointer;
+           font-size: 14px;
+           -webkit-user-select: none;
+           -moz-user-select: none;
+           -ms-user-select: none;
+           user-select: none;
+         }
+         /* Hide the browser's default checkbox */
+         .checkbox-container input {
+           position: absolute;
+           opacity: 0;
+           cursor: pointer;
+           height: 0;
+           width: 0;
+         }
+         /* Create a custom checkbox */
+         .checkmark {
+           position: absolute;
+           top: 0;
+           left: 0;
+           height: 20px;
+           width: 20px;
+           background-color: white;
+           border: 1px solid #141414;
+         }
+         /* When the checkbox is checked, add a blue background */
+         .checkbox-container input:checked ~ .checkmark {
+           background-color: #141414;
+         }
+         /* Create the checkmark/indicator (hidden when not checked) */
+         .checkmark:after {
+           content: "";
+           position: absolute;
+           display: none;
+         }
+         /* Show the checkmark when checked */
+         .checkbox-container input:checked ~ .checkmark:after {
+           display: block;
+         }
+         /* Style the checkmark/indicator */
+         .checkbox-container .checkmark:after {
+           left: 5px;
+           top: 1px;
+           width: 5px;
+           height: 10px;
+           border: solid white;
+           border-width: 0 3px 3px 0;
+           -webkit-transform: rotate(45deg);
+           -ms-transform: rotate(45deg);
+           transform: rotate(45deg);
+         }
+         #sign-in-btn{
+            width: 400px;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 700;
+         }
+         .login-btn-container{
+            margin-top: 25px;
+         }
+         .terms-condition{
+            text-align: center;
+            padding-top: 15px;
+         }
+         .green-link{
+            color: #297E84;
+         }
+         .green-link:hover{
+            color: #141414;
+         }
+      </style>
+   </head>
+   <body style="background-color: #f4f4f4;">
+      
+      <!-- Top Navigation Menu -->
+      <div class="navbar" style="z-index: 3;">
+         <!--Add to cart-->
+         <a id="myBtn" href="#" style="float:right"><img class="navbar-menu-right"  src="images/iconmonstr-shopping-bag-4.svg"/></a>
+         <!--logo-->
+         <a href="index.html"><img class="navbar-menu-right"  src="images/logo.png" style="width: 30%;"/></a>
+         <!--Search-->
+         <div class="dropdown"  style="float:right">
+            <button class="dropbtn">
+            <img class="navbar-menu-right"  src="images/iconmonstr-magnifier-2.svg"/>
+            </button>
+            <div class="dropdown-content">
+               <h2 style="text-align: center;">What are you looking for</h2>
+               <div style=" text-align: center;max-width:500px;margin:auto;">
+                  <form method="post" style="float:none;display: inline-block;">
+                     <input type="text" class="textbox" placeholder="Search">
+                     <button title="Search" value="" type="submit" class="button-search"> 
+                     <img class="navbar-menu-right"  src="images/iconmonstr-magnifier-2.svg" style="width: 15px;" />
+                     </button>
+                  </form>
+               </div>
+               <h4 style="text-align: center;">Popular Searches</h4>
+               <table>
+                  <tr>
+                     <td>
+                        <center>
+                           <div class="card-product">
+                              <img src="https://cdn.shopify.com/s/files/1/1151/0394/products/hoodie_large.png?v=1475010136" alt="Avatar" style="width:100%">
+                              <div class="container-product-name">
+                                 <span class="product-name-menu">Jacket for men</span> 
+                              </div>
+                           </div>
+                        </center>
+                     </td>
+                     <td>
+                        <center>
+                           <div class="card-product" id="tshirt" onclick="shirt()">
+                              <img src="https://purepng.com/public/uploads/large/purepng.com-women-dressclothingwomen-dressfashion-women-dress-cloth-apparel-631522326975ia8xr.png" alt="Avatar" style="width:50%">
+                              <div class="container-product-name">
+                                 <span class="product-name-menu">Casual dress for Women</span> 
+                              </div>
+                           </div>
+                        </center>
+                     </td>
+                     <td>
+                        <center>
+                           <div class="card-product" id="tshirt" onclick="shirt()">
+                              <img src="https://assets.theplace.com/image/upload/t_plp_img_m,f_auto,q_auto,dpr_2.0/v1/ecom/assets/products/tcp/2082735/2082735_10.jpg" alt="Avatar" style="width:40%">
+                              <div class="container-product-name">
+                                 <span class="product-name-menu">Wear for baby</span> 
+                              </div>
+                           </div>
+                        </center>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div class="dropdown">
+            <button class="dropbtn">MEN 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+               <div id="men-section" class="header">
+                  <h2 class="section-header fadeIn">MEN</h2>
+               </div>
+               <div class="row fadeInUp">
+                  <div class="column">
+                     <center>
+                        <div class="card-product" id="tshirt" onclick="shirtMen()">
+                           <img src="https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png" alt="Avatar" style="width:100%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">T-Shirts</span> 
+                           </div>
+                        </div>
+                        <br>
+                        <div class="card-product" onclick="jacketMen()">
+                           <img src="https://cdn.shopify.com/s/files/1/1151/0394/products/hoodie_large.png?v=1475010136" alt="Avatar" style="width:100%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu" style="">Jackets</span> 
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+                  <div class="column">
+                     <center>
+                        <div class="card-product" onclick="poloshirtMen()">
+                           <img src="https://www.pngarts.com/files/4/Polo-Shirt-Transparent-Images.png" alt="Avatar" style="width:100%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Polo Shirts</span> 
+                           </div>
+                        </div>
+                        <br>
+                        <div class="card-product" onclick="sportwearMen()">
+                           <img src="https://www.mmsports.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/c/h/chelsea-home-jersey-front.jpg" alt="Avatar" style="width:90%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Sports Wears</span> 
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+                  <div class="column">
+                     <center>
+                        <div class="card-product" onclick="longleeveMen()">
+                           <img src="https://www.printtshirt.com.sg/wp-content/uploads/2017/10/RDM364-Black.png" alt="Avatar" style="width:100%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Long Sleeves</span> 
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="dropdown">
+            <button class="dropbtn">WOMEN 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+               <div id="women-section" class="header">
+                  <h2 class="section-header fadeIn">WOMEN</h2>
+               </div>
+               <div class="row fadeInUp">
+                  <div class="column">
+                     <center>
+                        <div class="card-product" id="tshirt" onclick="sportswearWomen()">
+                           <img src="https://img.fcbayern.com/image/upload/f_auto,q_auto/t_productstage/eCommerce/produkte/21950/fc-bayern-damen-trikot-away-17-18.png" alt="Avatar" style="width:100%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Sports Wears</span> 
+                           </div>
+                        </div>
+                        <br>
+                        <div class="card-product" id="tshirt" onclick="jacketWomen()">
+                           <img src="https://cdn.shopify.com/s/files/1/0231/8024/7118/products/ME-004980_Kinesis_Women_s_Jacket_ME-01588_Tyrian-Purple_png_b82a2c29-f4b1-44cd-a7a8-3d14e4fc9e85_860x860.png?v=1601464459" alt="Avatar" style="width:70%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Jackets</span> 
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+                  <div class="column">
+                     <center>
+                        <div class="card-product" onclick="longsleeveW0men()">
+                           <img src="https://d11xh0uby8avni.cloudfront.net/fit-in/0x1200/products/1088-ladiessweatshirt-indigo.png" alt="Avatar" style="width:100%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu" style="">Long Sleeves</span> 
+                           </div>
+                        </div>
+                        <br>
+                        <div class="card-product" id="tshirt" onclick="casualWomen()">
+                           <img src="https://purepng.com/public/uploads/large/purepng.com-women-dressclothingwomen-dressfashion-women-dress-cloth-apparel-631522326975ia8xr.png" alt="Avatar" style="width:100%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Casuals</span> 
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+                  <div class="column">
+                     <center>
+                        <div class="card-product" onclick="shirtWomen()">
+                           <img src="https://tshirt2u.com.my/wp-content/uploads/2017/03/76000L-15-1.png" alt="Avatar" style="width:100%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu" style="">T-Shirts</span> 
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="dropdown">
+            <button class="dropbtn">KIDS 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+               <div id="kids-section" class="header">
+                  <h2 class="section-header fadeIn">KIDS</h2>
+               </div>
+               <div class="row fadeInUp">
+                  <div class="column">
+                     <center>
+                        <h3>Boys</h3>
+                        <div class="card-product" id="tshirt" onclick="jacketBoy()">
+                           <img src="https://degre7.com/11475/passon-boy-jacket.jpg" alt="Avatar" style="width:40%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Jackets</span> 
+                           </div>
+                        </div>
+                        <div class="card-product" id="tshirt" onclick="casualBoy()">
+                           <img src="https://www.vippng.com/png/detail/76-764094_kids-premium-soft-t-shirt-t-shirt.png" alt="Avatar" style="width:40%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Casuals</span> 
+                           </div>
+                        </div>
+                        <div class="card-product" id="tshirt" onclick="sportwearBoy()">
+                           <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_332706654_50_b-Youth-Los-Angeles-Lakers-LeBron-James-Statement-Purple-Jersey-HZ2B7BZ3PLAKJL?bgColor=0,0,0,0&fmt=png-alpha&hei=528&resMode=sharp&qlt=85,1&op_sharpen=1" alt="Avatar" style="width:40%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Sports Wears</span> 
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+                  <div class="column">
+                     <center>
+                        <h3>Girls</h3>
+                        <div class="card-product" id="tshirt" onclick="jacketGirl()">
+                           <img src="https://i.pinimg.com/originals/db/33/c8/db33c888c56abf257c45980685092ca4.png" alt="Avatar" style="width:40%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Jackets</span> 
+                           </div>
+                        </div>
+                        <div class="card-product" id="tshirt" onclick="casualGirl()">
+                           <img src="https://cdn.shopify.com/s/files/1/1172/0780/products/yuDg9NO8_grande.png?v=1596862764" alt="Avatar" style="width:40%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Casuals</span> 
+                           </div>
+                        </div>
+                        <div class="card-product" id="tshirt" onclick="sportswearGirl()">
+                           <img src="https://cf.shopee.com.my/file/b3328f820bfa3bdf87cbeb7355b2cdd1" alt="Avatar" style="width:40%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Sports Wears</span> 
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+                  <div class="column">
+                     <center>
+                        <h3>Baby</h3>
+                        <div class="card-product" id="tshirt" onclick="jacketBaby()">
+                           <img src="https://oldnavy.gap.com/webcontent/0017/377/718/cn17377718.jpg" alt="Avatar" style="width:40%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Jackets</span> 
+                           </div>
+                        </div>
+                        <div class="card-product" id="tshirt" onclick="casualBaby()">
+                           <img src="https://assets.theplace.com/image/upload/t_plp_img_m,f_auto,q_auto,dpr_2.0/v1/ecom/assets/products/tcp/2082735/2082735_10.jpg" alt="Avatar" style="width:40%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Casuals</span> 
+                           </div>
+                        </div>
+                        <div class="card-product" id="tshirt" onclick="sportswearBaby()">
+                           <img src="https://i.pinimg.com/originals/de/99/a8/de99a8fcb7afebf3938a8c68e9556d8b.jpg" alt="Avatar" style="width:40%">
+                           <div class="container-product-name">
+                              <span class="product-name-menu">Sports Wears</span> 
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <button onclick="sale()" class="menu-link">SALE</button>
+         <button class="menu-link" onclick="newArrival()">NEW ARRIVAL</button>
+      </div>
+      <!--Mobile View-->
+      <div class="topnav">
+         <a href="#home" class="logo-mobile">
+         <img src="images/logo.png" style="width: 15%;">
+         </a>
+         <div id="topnavLinks">
+            <a class="mobile-nav-item" href="men.html">MEN</a>
+            <a class="mobile-nav-item" href="women.html">WOMEN</a>
+            <a class="mobile-nav-item" href="kids.html">KIDS</a>
+            <a class="mobile-nav-item" href="new-arrival.html">NEW ARRIVAL</a>
+            <a class="mobile-nav-item" href="sale.html">SALE</a>
+         </div>
+         <a href="javascript:void(0);" class="icon" onclick="toogle()">
+         <img src="images/menu.svg"/>
+         </a>
+      </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+         <!-- Modal content -->
+         <div class="modal-content" style="width: 30%;">
+            <div class="modal-header">
+               <span class="close">&times;</span>
+               <h3>My Cart</h3>
+            </div>
+            <div class="modal-container">
+                  <p style="text-align: center;">Sign-In Required</p>
+            </div>
+         </div>
+      </div>
+      <!--Login-->
+      <div class="login" style="margin-top: 10%;margin-bottom: 10%;">
+         <h1 class="login-head">Log in to your account</h1>
+         <button class="fb-login-btn">
+            <i style="font-size: 30px;" class="fa fa-facebook-square" aria-hidden="true"></i>
+            <span style="padding-left: 15px;">Continue with Facebook</span>
+         </button>
+         <div class="login-notes">
+            We will never post on your behalf or share any information without your permission.
+         </div>
+         <!--<div class="underline-or">
+            <span>or</span>
+         </div>-->
+            <div class="form-container">
+               <label class="form-name" for="email">Email Address</label>
+               <input class="form-input" type="email" name="email">
+
+               <label class="form-name" for="password">Password</label>
+               <input class="form-input" type="password" name="password">
+
+               <br>
+               <a class="forgot-pwd-btn" href="#">Forgot your password?</a>
+               <br><br>
+               
+               <label class="checkbox-container">
+                  <span class="forgot-pwd-btn">Keep me signed in</span>
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+               </label>    
+            </div>
+            <div class="login-btn-container">
+                <button id="sign-in-btn" class="button-proceed button-proceed-radius">Log In</button>
+            </div>  
+            <div class="terms-condition">
+                By creating your account or signing in, you agree to our <a class="green-link" href="#">Terms and Conditions</a> & <a class="green-link" href="#"> Privacy Policy</a>.
+            </div>  
+
+            <p class="forgot-pwd-btn" style="text-align: center;">Dont Have Account Yet? <a class="green-link" href="sign-up.html">Create an Account</a>
+            </p>
+         </div>
+
+      <!--Footer-->
+    <footer class="footer-distributed">
+         <div class="footer-left">
+            <img src="images/logo.png" style="width: 60%">
+            <p class="footer-links">
+               <a href="men.html">Men</a>
+               ·
+               <a href="women.html">Women</a>
+               ·
+               <a href="kids.html">Kids</a>
+               ·
+               <a href="sale.html">Sale</a>
+               ·
+               <a href="new-arrival.html">New Arrival</a>
+            </p>
+            <p class="footer-company-name">LaZ &copy; <span id="current-year"></span></p>
+         </div>
+         <div class="footer-center">
+            <div>
+               <i class="fa fa-map-marker"></i>
+               <p><span>2nd floor Porta Vaga Session Rd Baguio,2600</span> Benguet, Philippines</p>
+            </div>
+            <div>
+               <i class="fa fa-phone"></i>
+               <p>278-178-8173</p>
+            </div>
+            <div>
+               <i class="fa fa-envelope"></i>
+               <p><a href="mailto:laZ@gmail.com">laZ@gmail.com</a></p>
+            </div>
+         </div>
+         <div class="footer-right">
+            <p class="footer-company-about">
+               <span>About Store</span>
+               LaZ, the most popular online cloating store in Baguio City. Free (50% discount and shipping) for
+               first time user. 
+            </p>
+            <div class="footer-icons">
+               <a id="facebook_footer_icon" href="facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+               <a id="twitter_footer_icon" href="twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+               <a id="youtube_footer_icon" href="youtube.com" target="_blank"><i class="fa fa-youtube-play"></i></a>
+               <a id="instagram_footer_icon" href="instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+            </div>
+         </div>
+      </footer>
+      <!--Javacsript-->
+      <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript">
+         /* this script sperate to paths js to avoid returning the floating button*/
+         //new arrival
+         function newArrival(){window.location.href = "new-arrival.html";}
+         //sale
+         function sale(){window.location.href = "sale.html";}
+         
+         //mens section
+         function men(){window.location.href = "men.html";}
+         function shirtMen(){window.location.href = "men-tshirt.html";}
+         function jacketMen(){window.location.href = "men-jacket.html";}
+         function poloshirtMen() {window.location.href = "men-polo.html";}
+         function sportwearMen() {window.location.href = "men-sport-wear.html";}
+         function longleeveMen() {window.location.href = "men-long-sleeve.html";}
+         
+         
+         //women
+         function women(){window.location.href = "women.html";}
+         function sportswearWomen() {window.location.href = "women-sports-wear.html";}
+         function jacketWomen() {window.location.href = "women-jacket.html";}
+         function longsleeveW0men() {window.location.href = "women-long-sleeve.html";}
+         function casualWomen() {window.location.href = "women-casual.html";}
+         function shirtWomen() {window.location.href = "women-tshirt.html";}
+         
+         
+         //kids
+         function kids(){window.location.href = "kids.html";}
+         //boys section
+         function jacketBoy() {window.location.href = "kids-boys-jacket.html";}
+         function casualBoy() {window.location.href = "kids-boys-casual.html";}
+         function sportwearBoy() {window.location.href = "kids-boys-sports.html";}
+         
+         //girls section
+         function jacketGirl() {window.location.href = "kids-girls-jacket.html";}
+         function casualGirl() {window.location.href = "kids-girls-casual.html";}
+         function sportswearGirl() {window.location.href = "kids-girls-sportswear.html";}
+         
+         //baby section
+         function casualBaby() {window.location.href = "kids-baby-casual.html";}
+         function jacketBaby() {window.location.href = "kids-baby-jacket.html";}
+         function sportswearBaby() {window.location.href = "kids-baby-sportswear.html";}
+      </script>
+   </body>
+</html>
