@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+.column-product-preview {
+  float: left;
+  width: 50%;
+  height: auto;
+  left: 50%;
+}
+
+@media screen and (max-width: 1200px){
+  .column-product-preview{width: auto;}
+}
+
+.listing
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  /*just for pen positioning*/
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+}
+
+.product
+{
+  width: 240px;
+  position: relative;
+}
+
+.product a
+{
+  text-decoration: none;
+}
+
+.img-wrapper
+{
+  display: block;
+  width: 100%;
+  height: 240px;
+  border: 1px solid #afafaf;
+  border-bottom: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.img-wrapper img
+{
+  
+}
+
+.info
+{
+  width: 100%;
+  background: #000;
+  color: #fff;
+  position: relative;
+  padding: 40px 10px 20px 10px;
+  text-align: center;
+  
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0,0,0,0);
+  backface-visibility: hidden;
+  transition-property: color,height;
+  transition-duration: 0.3s,0.4s;
+  transition-timing-function: ease-out;
+  height: 83px;
+}
+
+.info:before
+{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  transform: scaleY(0);
+  transform-origin: 50%;
+  transition: transform 0.3s ease-out;
+}
+
+.info:after
+{
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  border-style: solid;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  left: calc(50% - 11px);
+  bottom: 0;
+  border-width: 10px 10px 0 10px;
+  border-color: black transparent transparent transparent;
+}
+
+.product:hover .info
+{
+  height: 40px;
+}
+
+.product:hover .info:before
+{
+  transform: scaleY(0.7);
+}
+
+.product:hover .info:after
+{
+  visibility: visible;
+  transform: translateY(10px);
+}
+
+.title
+{
+  transition: transform 0.3s ease-out;
+}
+.title a
+{
+  color: inherit;
+}
+.product:hover .title
+{
+  transform: translateY(-18px);
+  font-weight: bold;
+  color: #000;
+}
+
+.price
+{
+  background: #e32d2c;
+  position: absolute;
+  font-size: 1.3em;
+  padding: 4px 13px;
+  top: -15px;
+  right: 10px;
+}
+
+.price.sale
+{
+  background: #00ba2f;
+}
+
+.price.old
+{
+  font-size: 0.95em;
+  padding: 4px 6px;
+  text-decoration: line-through;
+  top: -43px;
+}
+
+.actions-wrapper
+{
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-around;
+  visibility: hidden;
+}
+
+.actions-wrapper *
+{
+  width: 50%;
+  padding: 2px 0;
+  text-align: center;
+  color: #191919;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+.actions-wrapper *:before
+{
+  font-family: "FontAwesome";
+  margin-right: 8px;
+}
+.wishlist
+{
+  border-right: 1px solid #afafaf;
+}
+.wishlist:hover
+{
+  color: #e32d2c;
+}
+
+.cart:hover
+{
+  color: #0a75b9;
+}
+
+
+.product:hover .actions-wrapper *
+{
+  visibility: visible;
+}
+
+.note
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 4px 8px;
+  font-size: 0.9em;
+}
+
+.note.on-sale
+{
+  background: #00ba2f;
+  color: #fff;
+}
+
+.note.no-stock
+{
+  background: #191919;
+  color: #fff;
+}
+
+.responsive-image{
+  height: auto;
+  width: 100%;
+}
+
+/*coupon code*/
+.coupon {
+  border: 5px dotted #bbb;
+  width: 80%;
+  border-radius: 15px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.container-coupon {
+  padding: 2px 16px;
+  background-color: #f1f1f1;
+}
+
+.promo {
+  background: #ccc;
+  padding: 3px;
+  font-weight: bold;
+}
+
+.expire {
+  color: red;
+}
+
+/*path*/
+.path-list, .path-item{
+  display: inline;
+  list-style-type: none;
+  padding: 3px;
+  margin-top: 2px;
+  color: #9E9E9E;
+  font-size: 14px;
+}
+
+/*product category*/
+.category-name{
+  background-color: #FAFAFA;
+  padding: 30px;
+  color: #141414;
+}
+
+.header-category-title{
+  font-size: 20px;
+  display: inline;
+}
+.header-category-sum{
+  display: inline-block;
+  padding: 10px;
+  font-size: 14px;
+  color: #9E9E9E;
+}
+.select-path{
+  padding-bottom: 4px;
+  color: #9E9E9E;
+  text-decoration: none;
+}
+.select-path:hover{text-decoration: underline;}
+
+.sort-selector{
+  float: right;
+  margin-top: 20px;
+}
+.sort-item{
+  height: 30px;
+  text-align: left;
+  width: 150px;
+  border: 1px solid #9E9E9E;
+  border-radius: 2px 2px 2px 2px;
+  font-size: 12px;
+  font-style: normal;
+  cursor: pointer;
+}
+.sort-item-list{
+  text-align: left;
+  color: #9E9E9E;
+}
+.sort-item-label{
+   font-size: 14px;
+   font-weight: 100;
+   color: #616161;
+}
+
+/*
+  product image view
+  ===========================================================
+*/
+
+
+/*information area*/
+
+.view-product{
+  border-bottom: 1px solid #DED9D9;
+  border-radius: 2px 2px 2px 2px;
+}
+.product-head-preview{
+  font-size: 2.5em;
+  font-weight: 300;
+}
+.checked{color: orange;}
+.review-count{
+  font-weight: 300;
+  font-style: normal;
+}
+.price-current{
+  line-height: 0.0;
+  font-weight: 400;
+  font-style: normal;
+}
+.price-old{
+  color: #9E9E9E;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+.product-description{
+  padding-top: 0.6em;
+  font-weight: 300;
+}
+.product-specs{margin-top: 30px;}
+.variant-list,.variant-item{
+  display: inline;
+  list-style-type: none;
+  padding: 0.7em;
+}
+
+.variant{
+  background:none;
+  color: #141414;
+  border: 1px solid #141414;
+  border-radius: 40px;
+  padding:1.0em;
+  width: 80px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.variant:hover{
+  background: #141414;
+  color: #FAFAFA;
+  transition: 0.3s;
+}
+
+/* HIDE RADIO for product colors */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + .product-colors {
+  cursor: pointer;
+}
+
+[type=radio]:hover + .product-colors {
+  outline: 2px solid #DED9D9;
+}
+/* CHECKED STYLES */
+[type=radio]:checked + .product-colors {
+  outline: 2px solid #DED9D9;
+}
+.order-section{
+  margin-top: 0.5em;
+}
+#add-to-cart-btn{
+  width: 250px;
+  height: 50px;
+  font-weight: 700;
+}
+#wishlist-btn{
+  width: 250px;
+  height: 50px;
+  color: #141414;
+  background: none;
+  background: #FAFAFA;
+  border: 1px solid #141414;
+}
+#wishlist-btn:hover{
+  color: #FAFAFA;
+  background-color: #141414;
+}
+#product-policy{
+  background-color: #F0EDED;
+  padding: 2px;
+  font-weight: 300;
+}
+
+
+/*related products*/
+#realated-products{
+  text-align: center;
+  padding: 1.0em;
+}
+
+/*=====================================================*/
+/*Slider area*/
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container-product-review {
+  position: relative;
+}
+
+/* Hide the images by default */
+.productSlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev-image-product,
+.next-image-product {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #141414;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform .2s;  
+}
+
+/* Position the "next button" to the right */
+.next-image-product {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev-image-product:hover,
+.next-image-product:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+
+/* Number text (1/3 etc) */
+.current-slide {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row-image-product:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column-image-product {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.image-tab {
+  opacity: 0.6;
+}
+
+.active,
+.image-tab:hover {
+  opacity: 1;
+}
+
+
+/*
+   zoom product
+   =========================================================
+*/
+.img-magnifier-glass {
+  position: absolute;
+  z-index: 3;
+  border: 0.5px solid #141414;
+  border-radius: 40%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 300px;
+  height: 300px;
+  opacity:0;
+  pointer-events:none;
+}
+.img-magnifier-container:hover .img-magnifier-glass{
+  opacity:1;
+  pointer-events:initial;
+}

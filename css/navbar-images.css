@@ -1,0 +1,32 @@
+#men-section{background-image: url('https://cdn.shopify.com/s/files/1/1416/7404/articles/go-grunge-90s-clothing-for-men_800x.jpg?v=1563390596');}
+#women-section{background-image: url('https://www.todaydresses.com/wp-content/uploads/2019/06/Grunge-Style-In-Clothing-For-Women-Trends-In-20195.jpg');}
+#kids-section{background-image: url('https://cdn.trendhunterstatic.com/thumbs/grunge-clothing-for-kids.jpeg');}
+#men-section, #women-section, #kids-section{
+    background-color: #FAFAFA;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 18%;
+}
+
+
+.card-product {
+  transition: 0.3s;
+  width: 20%;
+  transition: transform .2s;
+  margin-bottom: 3%;
+  cursor: pointer;
+}
+
+.card-product:hover {
+  -ms-transform: scale(1.5); /* IE 9  https://cdn.shopify.com/s/files/1/1416/7404/articles/go-grunge-90s-clothing-for-men_800x.jpg?v=1563390596*/
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+
+.container-product-name {
+  padding: 2px 1px;
+  text-align:center;
+}
+.product-name-menu{
+	font-size: 25px;
+}
